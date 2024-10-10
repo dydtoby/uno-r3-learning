@@ -1,0 +1,22 @@
+const int ledPins[] = {2, 3, 4, 5, 6}; // Pins where the LEDs are connected
+const int numLeds = 5; // Number of LEDs
+const int delayTime = 200; // Delay time in milliseconds
+
+void setup() {
+  // Set all LED pins as OUTPUT
+  for (int i = 0; i < numLeds; i++) {
+    pinMode(ledPins[i], OUTPUT);
+  }
+}
+
+void loop() {
+  // Wave effect from LED 1 to LED 5
+  for (int i = 0; i < numLeds; i++) {
+    digitalWrite(ledPins[i], HIGH); // Turn the current LED on
+    delay(delayTime); // Wait for a while
+    digitalWrite(ledPins[i], LOW); // Turn the current LED off
+  }
+  
+  // Optional: Reset after reaching LED 5
+  delay(500); // Wait for half a second before restarting
+}
